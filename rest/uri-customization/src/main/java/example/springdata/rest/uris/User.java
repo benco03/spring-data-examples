@@ -31,4 +31,5 @@ public class User {
 
 	private final @Id UUID id = UUID.randomUUID();
 	private final String username;
+	private final String content;
 }

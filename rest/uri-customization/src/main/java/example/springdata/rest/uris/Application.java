@@ -39,7 +39,7 @@ public class Application {
 
 	public @PostConstruct void init() {
 
-		repository.save(new User("olivergierke"));
-		repository.save(new User("starbucksman"));
+		repository.save(new User("olivergierke", "tea"));
+		repository.save(new User("starbucksman", "coffee"));
 	}
 }

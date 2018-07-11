@@ -51,8 +51,15 @@ public class WebIntegrationTests {
 	@Test
 	public void identifiesResourcesUsingUsername() throws Exception {
 
-		mvc.perform(get("/users/olivergierke")).//
+		mvc.perform(patch("/users/olivergierke")).//
 				andExpect(status().isOk()).//
 				andExpect(jsonPath("$._links.self.href", endsWith("olivergierke")));
+	}
+
+	@Test
+	public void someTest() throws Exception {
+		mvc.perform(patch("/users/olivergierke").content("{\"content\":\"almonds\"}")).//
+						andExpect(status().isOk()).//
+						andExpect(content().string(containsString("almonds")));
 	}
 }
